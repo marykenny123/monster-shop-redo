@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "products")
 public class Product {
-
+//test
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
