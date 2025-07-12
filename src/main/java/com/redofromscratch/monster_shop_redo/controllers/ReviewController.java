@@ -20,16 +20,22 @@ public class ReviewController {
 
     //CREATE
     @PostMapping
-    public ResponseEntity<Review> addReview(@RequestBody Review newReview) {
-        Review createdReview = reviewService.addReview(newReview);
+    public ResponseEntity<Review> addReview(@RequestBody Review newReview, Long productId) {
+        Review createdReview = reviewService.addReview(newReview, productId);
         return new ResponseEntity<Review>(createdReview, HttpStatus.CREATED);
     }
 
     // READ BY PRODUCT ID
-    @GetMapping("/{id}")
-    public ResponseEntity<List<Review>> getReviewsByProductId(Long productId) {
+    @GetMapping("/{productId}")
+    public ResponseEntity<List<Review>> getReviewsByProductId(@PathVariable Long productId) {
         List<Review> reviews = reviewService.getReviewsByProductId(productId);
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+// get all reviews by product id
+    @GetMapping("/all-reviews")
+    public ResponseEntity<List<Review>> getAllReviews() {
+        List<Review> reviews = reviewService.getAllReviews();
+        return new ResponseEntity<List<Review>>(reviews, HttpStatus.OK);
     }
 
 }

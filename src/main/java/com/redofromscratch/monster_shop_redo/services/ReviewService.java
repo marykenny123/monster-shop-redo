@@ -18,7 +18,7 @@ public class ReviewService {
     }
 
     //CREATE
-    public Review addReview(Review newReview) {
+    public Review addReview(Review newReview, Long productId) {
         return reviewRepository.save(newReview);
     }
 
@@ -28,5 +28,12 @@ public class ReviewService {
 //        System.out.println("Pulled from repo: " + reviews.size()); // test
         return reviews;
     }
+
+    // to see get all reviews
+    //READ (ALL)
+    public List<Review> getAllReviews() {
+        return reviewRepository.findAll();
+    }
+
 
 }
