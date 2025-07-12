@@ -51,4 +51,13 @@ public class Review {
     public void setBody(String body) {
         this.body = body;
     }
+
+    //added:
+    public Product getProduct() {
+        return this.product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 }
