@@ -32,4 +32,11 @@ public class ReviewController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    // get all reviews
+    @GetMapping("/all-reviews")
+    public ResponseEntity<List<Review>> getAllReviews() {
+        List<Review> reviews = reviewService.getAllReviews();
+        return new ResponseEntity<List<Review>>(reviews, HttpStatus.OK);
+    }
+
 }

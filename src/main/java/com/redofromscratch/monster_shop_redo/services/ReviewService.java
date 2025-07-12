@@ -29,4 +29,10 @@ public class ReviewService {
         return reviews;
     }
 
+    //get all reviews
+    public List<Review> getAllReviews() {
+        return reviewRepository.findAll();
+    }
+
+
 }
