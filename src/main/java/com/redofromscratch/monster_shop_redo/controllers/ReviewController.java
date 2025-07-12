@@ -20,8 +20,8 @@ public class ReviewController {
 
     //CREATE
     @PostMapping
-    public ResponseEntity<Review> addReview(@RequestBody Review newReview, Long productId) {
-        Review createdReview = reviewService.addReview(newReview, productId);
+    public ResponseEntity<Review> addReview(@RequestBody Review newReview) {
+        Review createdReview = reviewService.addReview(newReview);
         return new ResponseEntity<Review>(createdReview, HttpStatus.CREATED);
     }
 

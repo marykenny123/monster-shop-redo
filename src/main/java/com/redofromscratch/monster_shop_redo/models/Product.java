@@ -80,4 +80,6 @@ public class Product {
     public void setFeatured(boolean featured) {
         this.featured = featured;
     }
+
+
 }

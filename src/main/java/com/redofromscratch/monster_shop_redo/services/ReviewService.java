@@ -18,7 +18,7 @@ public class ReviewService {
     }
 
     //CREATE
-    public Review addReview(Review newReview, Long productId) {
+    public Review addReview(Review newReview) {
         return reviewRepository.save(newReview);
     }
 
