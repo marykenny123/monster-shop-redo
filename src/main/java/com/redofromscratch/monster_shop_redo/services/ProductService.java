@@ -52,7 +52,13 @@ public class ProductService {
     }
 
 
-
-
     //DELETE
+    public boolean deleteProduct (Long id) {
+        if (!productRepository.existsById(id)) {
+            return false;
+        }
+        productRepository.deleteById(id);
+        return true;
+    }
+
 }

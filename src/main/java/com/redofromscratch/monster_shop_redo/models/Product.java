@@ -2,6 +2,9 @@ package com.redofromscratch.monster_shop_redo.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "products")
 public class Product {
@@ -15,6 +18,9 @@ public class Product {
     private double rating;
     private int reviewCount;
     private boolean featured;
+
+    @OneToMany(mappedBy = "product")
+    private List<Review> reviews = new ArrayList<>();
 
     public Product() {
     }
